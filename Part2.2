@@ -1,0 +1,13 @@
+def duplicate(book):
+	lst = []
+	for line in book:
+		word = line.strip()
+		lst = lst.append(word)
+	for s in lst:	
+		if s in lst:
+			
+			return False
+		else:
+			print(word)
+file = open("2600-0.txt")
+duplicate(file)
