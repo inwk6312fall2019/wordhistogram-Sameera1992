@@ -1,0 +1,18 @@
+import string
+def unique(book):
+    book = open(book)
+    book_lst = []
+    book_lst = book.split()
+    lst = []
+    dict = {}
+    PUNCT = string.punctuation
+    for word in book_lst:
+        word = word.strip(PUNCT)
+        dict[word] = dict.get(word,0)+1
+    for key in dict:
+        if dict[key] == 1:
+            lst.append(key)
+    return lst
+print(unique("Book,txt"))
+        
+        
