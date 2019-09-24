@@ -1,0 +1,19 @@
+def binary_search(lst, word):
+    if len(lst) == 1:
+        if lst[0] == word:
+            return 'word found'
+        else:
+            return 'word not found'
+    mid = len(lst)//2
+    if lst[mid] == word:
+        return 'word found'
+    elif lst[mid] < word:
+        return binary_search(lst[(mid+1):], word)
+    elif lst[mid] > word:
+        return binary_search(lst[:mid], word)
+    else:
+        return 'word not found' 
+lst = [1,2,3,4,5,6,7,8,9]
+word = 5
+res = binary_search(lst, word)
+print(res)
